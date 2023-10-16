@@ -26,4 +26,4 @@ const formationOfDataArray = () => {
   }
 };
 
-export default () => app(jobCondition, formationOfDataArray());
+export default () => app(jobCondition, formationOfDataArray);
