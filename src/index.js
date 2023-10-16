@@ -10,7 +10,7 @@ const app = (jobCondition, arr) => {
     const arrOfValues = arr();
     const question = readlineSync.question(`Question: ${arrOfValues[0]}\nYour answer:`);
     const answer = arrOfValues[1];
-    if (question == answer) {
+    if (question === answer) {
       console.log('Correct!');
     } else {
       return console.log(`${question} is wrong answer ;(. Correct answer was ${answer}.\nLet's try again, ${userName}!`);

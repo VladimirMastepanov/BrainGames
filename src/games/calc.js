@@ -9,21 +9,22 @@ const formationOfDataArray = () => {
   const symbol = arithmeticSings[Math.floor(Math.random() * 3)];
 
   const arithmeticExpression = `${firstNumber} ${symbol} ${secondNumber}`;
+  const arrOfValues = [];
   if (symbol === '+') {
     const correctAnswer = firstNumber + secondNumber;
-    const arrOfValues = [arithmeticExpression, correctAnswer];
+    arrOfValues.push(arithmeticExpression, correctAnswer.toString());
     return arrOfValues;
   }
   if (symbol === '*') {
     const correctAnswer = firstNumber * secondNumber;
-    const arrOfValues = [arithmeticExpression, correctAnswer];
+    arrOfValues.push(arithmeticExpression, correctAnswer.toString());
     return arrOfValues;
   }
   if (symbol === '-') {
     const correctAnswer = firstNumber - secondNumber;
-    const arrOfValues = [arithmeticExpression, correctAnswer];
+    arrOfValues.push(arithmeticExpression, correctAnswer.toString());
     return arrOfValues;
-  }
+  } return arrOfValues;
 };
 
 export default () => app(jobCondition, formationOfDataArray);
