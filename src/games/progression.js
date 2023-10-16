@@ -15,7 +15,7 @@ const missingNumber = () => {
   const skippingNumber = Math.ceil(Math.random() * 10);
   arrOfProgression[skippingNumber] = '..';
 
-  const arr = [arrOfProgression.join(' '), arrOfNumbers[skippingNumber]];
+  const arr = [arrOfProgression.join(' '), arrOfNumbers[skippingNumber].toString()];
   return arr;
 };
 

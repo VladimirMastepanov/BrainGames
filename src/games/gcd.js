@@ -15,7 +15,7 @@ const greatestCommonDivisor = () => {
     }
   }
 
-  const arr = [arithmeticExpression, greatestDivisor];
+  const arr = [arithmeticExpression, greatestDivisor.toString()];
   return arr;
 };
 
