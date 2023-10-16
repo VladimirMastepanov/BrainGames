@@ -16,7 +16,7 @@ const app = (jobCondition, arr) => {
       return console.log(`${question} is wrong answer ;(. Correct answer was ${answer}.\nLet's try again, ${userName}!`);
     }
   }
-  return console.log(`Correct!\nCongratulations, ${userName}!`);
+  return console.log(`Congratulations, ${userName}!`);
 };
 
 export default app;
