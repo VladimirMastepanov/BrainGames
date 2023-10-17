@@ -1,4 +1,4 @@
-import app from '../index.js';
+import runTheGame from '../index.js';
 
 const jobCondition = 'What is the result of the expression?';
 
@@ -27,4 +27,4 @@ const formationOfDataArray = () => {
   } return arrOfValues;
 };
 
-export default () => app(jobCondition, formationOfDataArray);
+export default () => runTheGame(jobCondition, formationOfDataArray);

@@ -1,4 +1,4 @@
-import app from '../index.js';
+import runTheGame from '../index.js';
 
 const jobCondition = 'What number is missing in the progression?';
 
@@ -19,4 +19,4 @@ const missingNumber = () => {
   return arr;
 };
 
-export default () => app(jobCondition, missingNumber);
+export default () => runTheGame(jobCondition, missingNumber);

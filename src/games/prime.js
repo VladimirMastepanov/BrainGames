@@ -1,4 +1,4 @@
-import app from '../index.js';
+import runTheGame from '../index.js';
 
 const jobCondition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -23,4 +23,4 @@ const missingNumber = () => {
   return array;
 };
 
-export default () => app(jobCondition, missingNumber);
+export default () => runTheGame(jobCondition, missingNumber);

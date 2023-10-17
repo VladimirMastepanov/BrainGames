@@ -1,4 +1,4 @@
-import app from '../index.js';
+import runTheGame from '../index.js';
 
 const jobCondition = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -16,4 +16,4 @@ const isEvenNumber = () => {
   } return arrOfValues;
 };
 
-export default () => app(jobCondition, isEvenNumber);
+export default () => runTheGame(jobCondition, isEvenNumber);

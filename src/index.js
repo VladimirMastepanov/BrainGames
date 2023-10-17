@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const app = (jobCondition, arr) => {
+const runTheGame = (jobCondition, arr) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name?');
   console.log(`Hello, ${userName}!`);
@@ -20,4 +20,4 @@ const app = (jobCondition, arr) => {
   return console.log(`Congratulations, ${userName}!`);
 };
 
-export default app;
+export default runTheGame;
