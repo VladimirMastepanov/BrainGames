@@ -1,6 +1,6 @@
 import runTheGame from '../index.js';
 
-const jobCondition = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 const formationOfDataArray = () => {
   const firstNumber = Math.ceil(Math.random() * 10);
@@ -27,4 +27,4 @@ const formationOfDataArray = () => {
   } return arrOfValues;
 };
 
-export default () => runTheGame(jobCondition, formationOfDataArray);
+export default () => runTheGame(description, formationOfDataArray);

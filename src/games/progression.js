@@ -1,6 +1,6 @@
 import runTheGame from '../index.js';
 
-const jobCondition = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
 const missingNumber = () => {
   let firstNumber = Math.ceil(Math.random() * 10);
@@ -19,4 +19,4 @@ const missingNumber = () => {
   return arr;
 };
 
-export default () => runTheGame(jobCondition, missingNumber);
+export default () => runTheGame(description, missingNumber);

@@ -1,10 +1,10 @@
 import readlineSync from 'readline-sync';
 
-const runTheGame = (jobCondition, valuesForComparison) => {
+const runTheGame = (description, valuesForComparison) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name?');
   console.log(`Hello, ${userName}!`);
-  console.log(jobCondition);
+  console.log(description);
   const numberOfRounds = 3;
 
   for (let i = 0; i < numberOfRounds; i += 1) {

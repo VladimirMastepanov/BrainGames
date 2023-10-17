@@ -1,6 +1,6 @@
 import runTheGame from '../index.js';
 
-const jobCondition = 'Answer "yes" if the number is even, otherwise answer "no".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEvenNumber = () => {
   const randomNumber = Math.ceil(Math.random() * 100);
@@ -16,4 +16,4 @@ const isEvenNumber = () => {
   } return arrOfValues;
 };
 
-export default () => runTheGame(jobCondition, isEvenNumber);
+export default () => runTheGame(description, isEvenNumber);

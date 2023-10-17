@@ -1,6 +1,6 @@
 import runTheGame from '../index.js';
 
-const jobCondition = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 
 const greatestCommonDivisor = () => {
   const firstNumber = Math.ceil(Math.random() * 10);
@@ -19,4 +19,4 @@ const greatestCommonDivisor = () => {
   return arr;
 };
 
-export default () => runTheGame(jobCondition, greatestCommonDivisor);
+export default () => runTheGame(description, greatestCommonDivisor);

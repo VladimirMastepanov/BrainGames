@@ -1,6 +1,6 @@
 import runTheGame from '../index.js';
 
-const jobCondition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const missingNumber = () => {
   const firstNumber = Math.ceil(Math.random() * 100);
@@ -23,4 +23,4 @@ const missingNumber = () => {
   return array;
 };
 
-export default () => runTheGame(jobCondition, missingNumber);
+export default () => runTheGame(description, missingNumber);
