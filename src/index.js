@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const runTheGame = (jobCondition, arr) => {
+const runTheGame = (jobCondition, valuesForComparison) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name?');
   console.log(`Hello, ${userName}!`);
@@ -8,13 +8,14 @@ const runTheGame = (jobCondition, arr) => {
   const numberOfRounds = 3;
 
   for (let i = 0; i < numberOfRounds; i += 1) {
-    const arrOfValues = arr();
-    const question = readlineSync.question(`Question: ${arrOfValues[0]}\nYour answer:`);
-    const answer = arrOfValues[1];
-    if (question === answer) {
+    const arrOfValues = valuesForComparison();
+    const mathematicalExpression = arrOfValues[0];
+    const correctAnswer = arrOfValues[1];
+    const question = readlineSync.question(`Question: ${mathematicalExpression}\nYour answer:`);
+    if (question === correctAnswer) {
       console.log('Correct!');
     } else {
-      return console.log(`${question} is wrong answer ;(. Correct answer was ${answer}.\nLet's try again, ${userName}!`);
+      return console.log(`${question} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${userName}!`);
     }
   }
   return console.log(`Congratulations, ${userName}!`);
