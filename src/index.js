@@ -5,8 +5,9 @@ const app = (jobCondition, arr) => {
   const userName = readlineSync.question('May I have your name?');
   console.log(`Hello, ${userName}!`);
   console.log(jobCondition);
+  const numberOfRounds = 3;
 
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < numberOfRounds; i += 1) {
     const arrOfValues = arr();
     const question = readlineSync.question(`Question: ${arrOfValues[0]}\nYour answer:`);
     const answer = arrOfValues[1];
