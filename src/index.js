@@ -12,13 +12,14 @@ const runTheGame = (jobCondition, valuesForComparison) => {
     const mathematicalExpression = arrOfValues[0];
     const correctAnswer = arrOfValues[1];
     const question = readlineSync.question(`Question: ${mathematicalExpression}\nYour answer:`);
-    if (question === correctAnswer) {
-      console.log('Correct!');
-    } else {
-      return console.log(`${question} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${userName}!`);
+    if (question !== correctAnswer) {
+      console.log(`${question} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
+      console.log(`Let's try again, ${userName}!`);
+      return;
     }
+    console.log('Correct!');
   }
-  return console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default runTheGame;
