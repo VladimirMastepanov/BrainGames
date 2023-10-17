@@ -2,29 +2,27 @@ import runTheGame from '../index.js';
 
 const description = 'What is the result of the expression?';
 
-const formationOfDataArray = () => {
+const correctCalculation = (value1, value2, operator) => {
+  if (operator === '+') {
+    return (value1 + value2).toString();
+  }
+  if (operator === '*') {
+    return (value1 * value2).toString();
+  }
+  return (value1 - value2).toString();
+};
+
+const roundGeneration = () => {
   const firstNumber = Math.ceil(Math.random() * 10);
   const secondNumber = Math.ceil(Math.random() * 10);
-  const arithmeticSings = ['+', '-', '*'];
-  const symbol = arithmeticSings[Math.floor(Math.random() * 3)];
+  const operators = ['+', '-', '*'];
+  const symbol = operators[Math.floor(Math.random() * operators.length)];
 
   const arithmeticExpression = `${firstNumber} ${symbol} ${secondNumber}`;
   const arrOfValues = [];
-  if (symbol === '+') {
-    const correctAnswer = firstNumber + secondNumber;
-    arrOfValues.push(arithmeticExpression, correctAnswer.toString());
-    return arrOfValues;
-  }
-  if (symbol === '*') {
-    const correctAnswer = firstNumber * secondNumber;
-    arrOfValues.push(arithmeticExpression, correctAnswer.toString());
-    return arrOfValues;
-  }
-  if (symbol === '-') {
-    const correctAnswer = firstNumber - secondNumber;
-    arrOfValues.push(arithmeticExpression, correctAnswer.toString());
-    return arrOfValues;
-  } return arrOfValues;
+  const correctAnswer = correctCalculation(firstNumber, secondNumber, symbol);
+  arrOfValues.push(arithmeticExpression, correctAnswer);
+  return arrOfValues;
 };
 
-export default () => runTheGame(description, formationOfDataArray);
+export default () => runTheGame(description, roundGeneration);
