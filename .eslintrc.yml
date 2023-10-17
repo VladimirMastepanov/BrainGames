@@ -1,5 +1,5 @@
 env:
-  browser: true
+  browser: false
   es2021: true
 extends: airbnb-base
 parserOptions:
@@ -7,7 +7,7 @@ parserOptions:
   sourceType: module
 rules:
   no-console: 0
-  import/extensions: 
+  import/extensions:
     - error
     - ignorePackages
     - js: always
