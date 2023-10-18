@@ -16,6 +16,7 @@ ___
 * 'brain-progression' - find the missing part of the progression.
 
 ___
+
 ###Launching the game and walkthrough examples:
 
 
