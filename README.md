@@ -17,7 +17,7 @@ ___
 
 ___
 
-###Launching the game and walkthrough examples:
+Launching the game and walkthrough examples:
 
 
     $ brain-even
