@@ -1,25 +1,17 @@
 import runTheGame from '../index.js';
+import isPrime from './helpers/isPrime.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const missingNumber = () => {
-  const firstNumber = Math.ceil(Math.random() * 100);
-  const arr = [];
-  for (let i = 1; i < firstNumber; i += 1) {
-    if (firstNumber % i === 0) {
-      arr.push(i);
-    }
-  }
-  let correctAnswer = '';
-  if (firstNumber === 1) {
-    correctAnswer = 'no';
-  } else if (arr.length > 1) {
-    correctAnswer = 'no';
-  } else if (arr.length === 1) {
+  const randomNumber = Math.ceil(Math.random() * 100);
+  let correctAnswer;
+  if (isPrime(randomNumber)) {
     correctAnswer = 'yes';
+  } else {
+    correctAnswer = 'no';
   }
-
-  const array = [firstNumber, correctAnswer];
+  const array = [randomNumber, correctAnswer];
   return array;
 };
 

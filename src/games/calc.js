@@ -1,16 +1,7 @@
 import runTheGame from '../index.js';
+import correctCalculation from './helpers/correctCalculation.js';
 
 const description = 'What is the result of the expression?';
-
-const correctCalculation = (value1, value2, operator) => {
-  if (operator === '+') {
-    return (value1 + value2).toString();
-  }
-  if (operator === '*') {
-    return (value1 * value2).toString();
-  }
-  return (value1 - value2).toString();
-};
 
 const roundGeneration = () => {
   const firstNumber = Math.ceil(Math.random() * 10);

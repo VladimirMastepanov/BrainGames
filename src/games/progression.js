@@ -1,16 +1,7 @@
 import runTheGame from '../index.js';
+import progressionGenerator from './helpers/progressionGenerator.js';
 
 const description = 'What number is missing in the progression?';
-
-const progressionGenerator = (startNumber, lengthOfStep, step) => {
-  let start = startNumber;
-  const arrayOfProgression = [];
-  arrayOfProgression.push(start);
-  for (let i = 0; i < step; i += 1) {
-    start += lengthOfStep;
-    arrayOfProgression.push(start);
-  } return arrayOfProgression;
-};
 
 const missingNumber = () => {
   const firstNumber = Math.ceil(Math.random() * 10);
