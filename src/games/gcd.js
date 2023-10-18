@@ -14,9 +14,7 @@ const greatestDivisor = (value1, value2) => {
 const greatestCommonDivisor = () => {
   const firstNumber = Math.ceil(Math.random() * 10);
   const secondNumber = Math.ceil(Math.random() * 10);
-
   const arithmeticExpression = `${firstNumber} ${secondNumber}`;
-
   const divisor = greatestDivisor(firstNumber, secondNumber);
 
   const arr = [arithmeticExpression, divisor];
