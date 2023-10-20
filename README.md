@@ -36,4 +36,4 @@ ___
 
     $ brain-prime
 
-[![asciicast](https://asciinema.org/a/ZIiOTvSjoXbJxZfw7B97So4BV.svg)](https://asciinema.org/a/ZIiOTvSjoXbJxZfw7B97So4BV)
+[![asciicast](https://asciinema.org/a/UnkgtsXZKh9VRnyMJgt9H0yXP.svg)](https://asciinema.org/a/UnkgtsXZKh9VRnyMJgt9H0yXP)
