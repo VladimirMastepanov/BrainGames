@@ -1,19 +1,36 @@
-import runTheGame from '../index.js';
-import correctCalculation from './helpers/correctCalculation.js';
+import runEngine from '../index.js';
+import randomNumber from './helpers/randomNumber.js';
 
 const description = 'What is the result of the expression?';
 
-const roundGeneration = () => {
-  const firstNumber = Math.ceil(Math.random() * 10);
-  const secondNumber = Math.ceil(Math.random() * 10);
+const calculate = (number1, number2, operator) => {
+  let answer;
+  switch (operator) {
+    case '+':
+      answer = (number1 + number2).toString();
+      break;
+    case '*':
+      answer = (number1 * number2).toString();
+      break;
+    case '-':
+      answer = (number1 - number2).toString();
+      break;
+    default:
+      console.log(`undefined ${operator}`);
+  }
+  return answer;
+};
+
+const generateRound = () => {
+  const range = 10;
+  const firstNumber = randomNumber(range);
+  const secondNumber = randomNumber(range);
   const operators = ['+', '-', '*'];
   const symbol = operators[Math.floor(Math.random() * operators.length)];
 
-  const arithmeticExpression = `${firstNumber} ${symbol} ${secondNumber}`;
-  const arrOfValues = [];
-  const correctAnswer = correctCalculation(firstNumber, secondNumber, symbol);
-  arrOfValues.push(arithmeticExpression, correctAnswer);
-  return arrOfValues;
+  const question = `${firstNumber} ${symbol} ${secondNumber}`;
+  const answer = calculate(firstNumber, secondNumber, symbol);
+  return [question, answer];
 };
 
-export default () => runTheGame(description, roundGeneration);
+export default () => runEngine(description, generateRound);

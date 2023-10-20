@@ -1,19 +1,16 @@
-import runTheGame from '../index.js';
-import isEven from './helpers/isEven.js';
+import runEngine from '../index.js';
+import randomNumber from './helpers/randomNumber.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const isEvenNumber = () => {
-  const randomNumber = Math.ceil(Math.random() * 100);
-  const arrOfValues = [];
-  let correctAnswer;
-  if (isEven(randomNumber)) {
-    correctAnswer = 'yes';
-  } else {
-    correctAnswer = 'no';
-  }
-  arrOfValues.push(randomNumber, correctAnswer);
-  return arrOfValues;
+const isEven = (number) => number % 2 === 0;
+
+const evenNumberGenerateRound = () => {
+  const range = 100;
+  const number = randomNumber(range);
+  const answer = isEven(number) ? 'yes' : 'no';
+
+  return [number, answer];
 };
 
-export default () => runTheGame(description, isEvenNumber);
+export default () => runEngine(description, evenNumberGenerateRound);
