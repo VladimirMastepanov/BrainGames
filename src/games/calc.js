@@ -1,35 +1,33 @@
 import runEngine from '../index.js';
-import randomNumber from './helpers/randomNumber.js';
+import getRandomNumber from './helpers/getRandomNumber.js';
 
 const description = 'What is the result of the expression?';
 
 const calculate = (number1, number2, operator) => {
-  let answer;
   switch (operator) {
     case '+':
-      answer = (number1 + number2).toString();
-      break;
+      return (number1 + number2).toString();
     case '*':
-      answer = (number1 * number2).toString();
-      break;
+      return (number1 * number2).toString();
     case '-':
-      answer = (number1 - number2).toString();
-      break;
+      return (number1 - number2).toString();
     default:
       console.log(`undefined ${operator}`);
-  }
-  return answer;
+  } return console.log(`undefined ${operator}`);
 };
 
 const generateRound = () => {
-  const range = 10;
-  const firstNumber = randomNumber(range);
-  const secondNumber = randomNumber(range);
+  const startRange = 1;
+  const endRange = 11;
+  const firstNumber = getRandomNumber(startRange, endRange);
+  const secondNumber = getRandomNumber(startRange, endRange);
   const operators = ['+', '-', '*'];
-  const symbol = operators[Math.floor(Math.random() * operators.length)];
+  const startRangeOperators = 0;
+  const endRangeOperators = operators.length;
+  const operator = operators[getRandomNumber(startRangeOperators, endRangeOperators)];
 
-  const question = `${firstNumber} ${symbol} ${secondNumber}`;
-  const answer = calculate(firstNumber, secondNumber, symbol);
+  const question = `${firstNumber} ${operator} ${secondNumber}`;
+  const answer = calculate(firstNumber, secondNumber, operator);
   return [question, answer];
 };
 

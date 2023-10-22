@@ -1,30 +1,32 @@
 import runEngine from '../index.js';
-import randomNumber from './helpers/randomNumber.js';
+import getRandomNumber from './helpers/getRandomNumber.js';
 
 const description = 'What number is missing in the progression?';
 
 const progressionGenerator = (startNumber, step, lengthProgression) => {
   let start = startNumber;
-  const arrayOfProgression = [];
-  arrayOfProgression.push(start);
+  const progression = [start];
   for (let i = 0; i < lengthProgression; i += 1) {
     start += step;
-    arrayOfProgression.push(start);
-  } return arrayOfProgression;
+    progression.push(start);
+  } return progression;
 };
 
-const missingNumber = () => {
-  const range = 10;
-  const firstNumber = randomNumber(range);
+const generateRound = () => {
+  const startRange = 1;
+  const endRange = 11;
+  const firstNumber = getRandomNumber(startRange, endRange);
+  const manimumProgressionStep = 1;
   const maximumProgressionStep = 5;
-  const secondNumber = randomNumber(maximumProgressionStep);
-  const lengthOfProgression = 10;
-  const arrOfProgression = progressionGenerator(firstNumber, secondNumber, lengthOfProgression);
-  const skippingNumber = randomNumber(lengthOfProgression);
-  const lostNumber = arrOfProgression[skippingNumber].toString();
-  arrOfProgression[skippingNumber] = '..';
+  const secondNumber = getRandomNumber(manimumProgressionStep, maximumProgressionStep);
+  const minlengthOfProgression = 9;
+  const maxlengthOfProgression = 10;
+  const arrOfProgression = progressionGenerator(firstNumber, secondNumber, minlengthOfProgression);
+  const hiddenIndex = getRandomNumber(minlengthOfProgression, maxlengthOfProgression);
+  const lostNumber = arrOfProgression[hiddenIndex].toString();
+  arrOfProgression[hiddenIndex] = '..';
 
   return [arrOfProgression.join(' '), lostNumber];
 };
 
-export default () => runEngine(description, missingNumber);
+export default () => runEngine(description, generateRound);

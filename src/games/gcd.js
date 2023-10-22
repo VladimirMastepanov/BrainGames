@@ -1,5 +1,5 @@
 import runEngine from '../index.js';
-import randomNumber from './helpers/randomNumber.js';
+import getRandomNumber from './helpers/getRandomNumber.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
@@ -13,9 +13,10 @@ const greatestDivisor = (value1, value2) => {
 };
 
 const greatestCommonDivisor = () => {
-  const range = 10;
-  const firstNumber = randomNumber(range);
-  const secondNumber = randomNumber(range);
+  const startRange = 1;
+  const endRange = 11;
+  const firstNumber = getRandomNumber(startRange, endRange);
+  const secondNumber = getRandomNumber(startRange, endRange);
   const arithmeticExpression = `${firstNumber} ${secondNumber}`;
   const divisor = greatestDivisor(firstNumber, secondNumber);
 
