@@ -4,11 +4,9 @@ import getRandomNumber from './helpers/getRandomNumber.js';
 const description = 'What number is missing in the progression?';
 
 const progressionGenerator = (startNumber, step, lengthProgression) => {
-  let start = startNumber;
-  const progression = [start];
+  const progression = [];
   for (let i = 0; i < lengthProgression; i += 1) {
-    start += step;
-    progression.push(start);
+    progression.push(startNumber + step * i);
   } return progression;
 };
 
@@ -19,10 +17,9 @@ const generateRound = () => {
   const manimumProgressionStep = 1;
   const maximumProgressionStep = 5;
   const secondNumber = getRandomNumber(manimumProgressionStep, maximumProgressionStep);
-  const minlengthOfProgression = 9;
-  const maxlengthOfProgression = 10;
-  const arrOfProgression = progressionGenerator(firstNumber, secondNumber, minlengthOfProgression);
-  const hiddenIndex = getRandomNumber(minlengthOfProgression, maxlengthOfProgression);
+  const lengthOfProgression = 10;
+  const arrOfProgression = progressionGenerator(firstNumber, secondNumber, lengthOfProgression);
+  const hiddenIndex = getRandomNumber(startRange, lengthOfProgression);
   const lostNumber = arrOfProgression[hiddenIndex].toString();
   arrOfProgression[hiddenIndex] = '..';
 
