@@ -23,8 +23,7 @@ const generateRound = () => {
   const secondNumber = getRandomNumber(startRange, endRange);
   const operators = ['+', '-', '*'];
   const startRangeOperators = 0;
-  const endRangeOperators = operators.length;
-  const operator = operators[getRandomNumber(startRangeOperators, endRangeOperators)];
+  const operator = operators[getRandomNumber(startRangeOperators, operators.length)];
 
   const question = `${firstNumber} ${operator} ${secondNumber}`;
   const answer = calculate(firstNumber, secondNumber, operator);

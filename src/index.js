@@ -9,7 +9,8 @@ const runEngine = (description, generateRound) => {
 
   for (let i = 0; i < roundsCount; i += 1) {
     const [mathematicalExpression, correctAnswer] = generateRound();
-    const question = readlineSync.question(`Question: ${mathematicalExpression}\nYour answer:`);
+    console.log(`Question: ${mathematicalExpression}`);
+    const question = readlineSync.question('Your answer:');
     if (question !== correctAnswer) {
       console.log(`${question} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
       console.log(`Let's try again, ${userName}!`);
