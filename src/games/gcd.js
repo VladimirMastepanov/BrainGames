@@ -13,10 +13,8 @@ const greatestDivisor = (value1, value2) => {
 };
 
 const greatestCommonDivisor = () => {
-  const startRange = 1;
-  const endRange = 11;
-  const firstNumber = getRandomNumber(startRange, endRange);
-  const secondNumber = getRandomNumber(startRange, endRange);
+  const firstNumber = getRandomNumber(1, 11);
+  const secondNumber = getRandomNumber(1, 11);
   const arithmeticExpression = `${firstNumber} ${secondNumber}`;
   const divisor = greatestDivisor(firstNumber, secondNumber);
 
